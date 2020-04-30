@@ -1,5 +1,6 @@
 export const movies = [
 	{
+		id: 1,
 		title: 'Grease',
 		description: 'Grease is a 1978 American musical romantic comedy film based on the 1971 musical of the same name by Jim Jacobs and Warren Casey. Written by Bronte Woodard[2] and directed by Randal Kleiser in his theatrical feature film debut, the film depicts the lives of greaser Danny Zuko and Australian transfer student Sandy Olsson who develop an attraction for each other. The film stars John Travolta as Danny, Olivia Newton-John as Sandy, and Stockard Channing as Betty Rizzo, the leader of the Pink Ladies.',
 		director: 'Randal Kleiser',
@@ -8,6 +9,7 @@ export const movies = [
 		rating: 0
 	},
 	{
+		id: 2,
 		title: 'Avengers: Infinity War',
 		description: 'The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.',
 		director: 'Joe Russo, Anthony Russo',
@@ -16,6 +18,7 @@ export const movies = [
 		rating: 0
 	},
 	{
+		id: 3,
 		title: 'Avengers: Endgame',
 		description: 'After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos\' actions and restore balance to the universe.',
 		director: 'Joe Russo, Anthony Russo',
@@ -24,6 +27,7 @@ export const movies = [
 		rating: 0
 	},
 	{
+		id: 4,
 		title: 'Ready Player One',
 		description: 't takes place in 2045, when much of humanity uses the virtual reality software OASIS (Ontologically Anthropocentric Sensory Immersive Simulation) to escape the desolation of the real world. Orphaned teenager Wade Watts (Sheridan) finds clues to a hidden game that promises OASIS\'s ownership to the winner, and he and four allies try to complete it before a corporation run by businessman Nolan Sorrento (Mendelsohn) can do so.',
 		director: 'Steven Spielberg',
@@ -32,6 +36,7 @@ export const movies = [
 		rating: 0
 	},
 	{
+		id: 5,
 		title: 'Inside Out',
 		description: 'After young Riley is uprooted from her Midwest life and moved to San Francisco, her emotions - Joy, Fear, Anger, Disgust and Sadness - conflict on how best to navigate a new city, house, and school.',
 		director: 'Pete Docter',
@@ -40,6 +45,7 @@ export const movies = [
 		rating: 0
 	},
 	{
+		id: 6,
 		title: 'The Lion King',
 		description: 'Jon Favreau',
 		director: 'After the murder of his father, a young lion prince flees his kingdom only to learn the true meaning of responsibility and bravery.',

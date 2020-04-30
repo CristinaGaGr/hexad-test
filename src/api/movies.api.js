@@ -1,5 +1,5 @@
 import { movies } from './movies';
 
 export const getMovies = () => {
-	return new Promise((resolve) => setTimeout(() => {return movies}, 200));
+	return new Promise((resolve) => setTimeout(() => resolve(movies), 200));
 };
