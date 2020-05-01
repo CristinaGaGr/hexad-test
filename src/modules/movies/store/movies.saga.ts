@@ -1,6 +1,6 @@
 import { takeLatest, call, put } from 'redux-saga/effects';
 import { getMovies } from '../../../api/movies.api';
-import { GET_MOVIES_REQUEST, getMoviesResponse } from './movies.actions';
+import { getMoviesResponse, MovieActionTypes } from './movies.actions';
 
 function* getMoviesEffect() {
 	try {
@@ -14,7 +14,7 @@ function* getMoviesEffect() {
 
 
 function* moviesSagas() {
-	yield takeLatest(GET_MOVIES_REQUEST, getMoviesEffect);
+	yield takeLatest(MovieActionTypes.GET_MOVIES_REQUEST, getMoviesEffect);
 }
 
 

@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
-import styles from './movies-list.scss';
+import styles from './movies-list.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { Movie } from '../movie/movie';
 import { getMoviesRequest } from '../../store/movies.actions';
+import { State } from '../../../../store/store';
+import { MovieComponent } from '../movie/movie';
 
 export const MoviesList = () => {
 	const dispatch = useDispatch();
-	const movies = useSelector((state) => state.moviesReducer.movies);
+	const movies = useSelector((state: State) => state.moviesReducer.movies);
 
 	useEffect(() => {
 		dispatch(getMoviesRequest());
@@ -16,7 +17,7 @@ export const MoviesList = () => {
 		<div>
 			<h1>MOVIES</h1>
 			{movies.map((e) =>
-				<Movie key={e.id}
+				<MovieComponent key={e.id}
 					   {...e}/>
 			)}
 		</div>
