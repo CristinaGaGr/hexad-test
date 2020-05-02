@@ -29,16 +29,16 @@ export const MoviesList = () => {
 		} else {
 			clearInterval(timer);
 		}
-	}, [isRandom]);
+	}, [isRandom, dispatch]);
 
 	useEffect(() => {
 		dispatch(getMoviesRequest());
 	}, [dispatch]);
 
 	return (
-		<div>
+		<div className={styles.container}>
 			<h1>MOVIES</h1>
-			<button onClick={() => setIsRandom(!isRandom)}>{isRandom ? 'Stop Random' : 'Start Random'}</button>
+			<button className={styles.randomButton} onClick={() => setIsRandom(!isRandom)}>{isRandom ? 'Stop Random' : 'Start Random'}</button>
 			{movies.map((e) =>
 				<MovieComponent key={e.id}
 					   {...e}/>
