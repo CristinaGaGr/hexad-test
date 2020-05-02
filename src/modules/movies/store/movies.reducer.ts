@@ -20,6 +20,17 @@ export const moviesReducer = (state = initialState, action: Action): MoviesState
 				...state,
 				movies: action.payload
 			};
+		case MovieActionTypes.RATE_MOVIE_RESPONSE:
+			const index = state.movies.findIndex((e) => e.id === action.payload.id);
+			const movies = [
+				...state.movies.slice(0, index),
+				action.payload,
+				...state.movies.slice(index + 1)
+			].sort((a, b) => b.rating - a.rating);
+			return {
+				...state,
+				movies
+			};
 		default:
 			return state;
 	}

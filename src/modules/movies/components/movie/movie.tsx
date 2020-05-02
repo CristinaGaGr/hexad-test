@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import styles from './movie.module.scss';
 import { Movie } from '../../movie.model';
-import { Rating } from '@material-ui/lab';
+import { useDispatch } from 'react-redux';
+import { rateMovieRequest } from '../../store/movies.actions';
 
 
 export const MovieComponent = ({title, description, director, year, imgUrl, rating, id}: Movie) => {
-	const [stars, setStars] = useState(rating);
+	const dispatch = useDispatch();
+	console.log(id);
+
+	const rateMovie = (newValue: number) => {
+		console.log(id);
+		dispatch(rateMovieRequest(id, newValue));
+	};
 
 	return (
 		<div className={styles.container}>
@@ -14,13 +21,14 @@ export const MovieComponent = ({title, description, director, year, imgUrl, rati
 			<p><strong>Director:</strong> {director}</p>
 			<p><strong>Summary:</strong> {description}</p>
 			<p><strong>Release:</strong> {year}</p>
-			<Rating
-				name="simple-controlled"
-				value={stars}
-				onChange={(event: any, newValue: any) => {
-					setStars(newValue);
-				}}
-			/>
+			<p><strong>Rating:</strong> {rating}</p>
+			<div>
+				<button onClick={() => rateMovie(1)}>1</button>
+				<button onClick={() => rateMovie(2)}>2</button>
+				<button onClick={() => rateMovie(3)}>3</button>
+				<button onClick={() => rateMovie(4)}>4</button>
+				<button onClick={() => rateMovie(5)}>5</button>
+			</div>
 		</div>
 	);
 };
