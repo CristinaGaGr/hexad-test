@@ -8,6 +8,7 @@ import { Rating } from '../rating/rating';
 
 export const MovieComponent = ({title, description, director, year, imgUrl, rating, id}: Movie) => {
 	const dispatch = useDispatch();
+
 	const rateMovie = (newValue: number) => {
 		dispatch(rateMovieRequest(id, newValue));
 	};
