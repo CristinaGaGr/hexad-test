@@ -7,8 +7,6 @@ import { rateMovieRequest } from '../../store/movies.actions';
 
 export const MovieComponent = ({title, description, director, year, imgUrl, rating, id}: Movie) => {
 	const dispatch = useDispatch();
-	console.log(id);
-
 	const rateMovie = (newValue: number) => {
 		console.log(id);
 		dispatch(rateMovieRequest(id, newValue));

@@ -6,7 +6,8 @@ export enum MovieActionTypes {
 	GET_MOVIES_REQUEST = '[Movies] get movies request',
 	GET_MOVIES_RESPONSE = '[Movies] get movies response',
 	RATE_MOVIE_REQUEST = '[Movie] rate movie request',
-	RATE_MOVIE_RESPONSE = '[Movie] rate movie response'
+	RATE_MOVIE_RESPONSE = '[Movie] rate movie response',
+	INIT_RANDOM = '[Movie] init random'
 }
 
 export const getMoviesRequest = (): Action => {
@@ -37,4 +38,11 @@ export const rateMovieResponse = (movie: Movie): Action => {
 		type: MovieActionTypes.RATE_MOVIE_RESPONSE,
 		payload: movie
 	};
+};
+
+
+export const random = (): Action => {
+	return  {
+		type: MovieActionTypes.INIT_RANDOM
+	}
 };

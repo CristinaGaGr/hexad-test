@@ -22,17 +22,34 @@ export const moviesReducer = (state = initialState, action: Action): MoviesState
 			};
 		case MovieActionTypes.RATE_MOVIE_RESPONSE:
 			const index = state.movies.findIndex((e) => e.id === action.payload.id);
-			const movies = [
+			let movies = [
 				...state.movies.slice(0, index),
 				action.payload,
 				...state.movies.slice(index + 1)
-			].sort((a, b) => b.rating - a.rating);
+			];
+			movies = sortArray(movies);
 			return {
 				...state,
 				movies
+			};
+		case MovieActionTypes.INIT_RANDOM:
+			let newMovies = state.movies.map((e: Movie) => {
+				e.rating = Math.ceil(Math.random() * 5);
+				return e;
+			});
+			newMovies = sortArray(newMovies);
+
+			return  {
+				...state,
+				movies: newMovies
 			};
 		default:
 			return state;
 	}
 };
 
+
+
+const sortArray = (arr: Movie[]): Movie[] => {
+	return arr.sort((a, b) => b.rating - a.rating);
+};
