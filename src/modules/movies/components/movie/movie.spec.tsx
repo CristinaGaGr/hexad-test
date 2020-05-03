@@ -1,31 +1,37 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { MovieComponent } from './movie';
 import { movies } from '../../../../api/movies';
-import { Provider } from 'react-redux';
-import store from '../../../../store/store';
-import { Rating } from '../rating/rating';
+import { MovieActionTypes } from '../../store/movies.actions';
+
 
 const movie = movies[0];
 
+const mockDispatch = jest.fn();
+jest.mock('react-redux', () => ({
+	useDispatch: () => mockDispatch,
+}));
+
 describe('MovieComponent', () => {
-	const container = shallow(
-		<Provider store={store}>
-			<MovieComponent {...movie}/>
-		</Provider>
+	const container = mount(
+			<MovieComponent {...movie} />
 	);
 
 	it('should match the snapshot', () => {
-		console.log(container.);
 		expect(container.html()).toMatchSnapshot();
 	});
 
-	it('should dispatch rate movie request action', () => {
-		const spy = jest.spyOn(MovieComponent.prototype, 'rateMovie');
-		mount(<MovieComponent {...movie}/>);
-		container.find('button').first().simulate('click');
-
-		expect(spy).toHaveBeenCalledWith(1, 1);
+	it('should render expected text', () => {
+		expect(container.find('h2').text()).toEqual(movies[0].title);
 	});
 
+	it("should dispatch rate movie request action", () => {
+		const expectedCall = {
+			payload: { id: 1, rating: 1 },
+			type: MovieActionTypes.RATE_MOVIE_REQUEST,
+		};
+		const button = container.find("button").first();
+		button.simulate("click");
+		expect(mockDispatch).toHaveBeenCalledWith(expectedCall);
+	});
 });

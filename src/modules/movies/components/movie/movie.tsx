@@ -27,7 +27,7 @@ export const MovieComponent = ({title, description, director, year, imgUrl, rati
 				<Rating onClick={rateMovie}
 						value={rating}
 						className={styles.stars}/>
-				<div>{rating}</div>
+				<div id={'rating'}>{rating}</div>
 			</div>
 		</div>
 	);

@@ -12,7 +12,7 @@ type StarProps = {
 	starValue: number;
 }
 
-const Star = ({onClick, setHover, value, hover, starValue}: StarProps) => {
+export const Star = ({onClick, setHover, value, hover, starValue}: StarProps) => {
 	return (
 		<button onClick={() => onClick(starValue)}
 				onMouseEnter={() => setHover(starValue)}
@@ -28,7 +28,7 @@ const Star = ({onClick, setHover, value, hover, starValue}: StarProps) => {
 type RatingProps = {
 	onClick: Function;
 	value: number;
-	className: string;
+	className?: string;
 }
 export const Rating = ({onClick, value, className = ''}: RatingProps) => {
 	const [hover, setHover] = useState(value);
