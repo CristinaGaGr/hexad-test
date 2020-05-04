@@ -1,5 +1,5 @@
 # MY FAV MOVIES!
-[cinema](https://media.giphy.com/media/aPUWIkCcerreE/giphy.gif)
+![cinema](https://media.giphy.com/media/aPUWIkCcerreE/giphy.gif)
 
 
 ## MY FAV MOVIES 
