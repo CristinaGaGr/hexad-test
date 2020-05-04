@@ -4,11 +4,11 @@
 
 ## MY FAV MOVIES 
 
-Desktop application.
-It will display my 15 favorite movies.
-User can rate each movie from 1 to 5 stars OR they can press START RANDOM button to randomly rate the movies at random times. 
-Press STOP RANDOM for stopping the rating.
-Once the movies are rated the list sort itself from highest to lowest rated movie.
+Desktop application.  
+It will display my 15 favorite movies.  
+User can rate each movie from 1 to 5 stars OR they can press START RANDOM button to randomly rate the movies at random times.   
+Press STOP RANDOM for stopping the rating.  
+Once the movies are rated the list sort itself from highest to lowest rated movie.  
 
 This project was initialized with [Create React App](https://github.com/facebook/create-react-app).
 
