@@ -37,7 +37,7 @@ export const MoviesList = () => {
 
 	return (
 		<div className={styles.container}>
-			<h1>MOVIES</h1>
+			<h1>MY FAV MOVIES</h1>
 			<button className={styles.randomButton} onClick={() => setIsRandom(!isRandom)}>{isRandom ? 'Stop Random' : 'Start Random'}</button>
 			{movies.map((e) =>
 				<MovieComponent key={e.id}
